@@ -20,6 +20,12 @@ build/
 dist/
 .Python
 
+# --- Secrets / environment files (never commit tokens or API keys) ---
+.env
+.env.*
+*.env
+!.env.example
+
 # --- Virtual environments ---
 .venv/
 venv/
