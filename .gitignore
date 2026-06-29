@@ -1,0 +1,46 @@
+# --- Large model files (downloaded, not source — see v0/README.md) ---
+# kokoro-v1.0.onnx is ~325MB and exceeds GitHub's 100MB file limit.
+v0/models/*.onnx
+v0/models/*.bin
+
+# --- Generated SQLite database (seeded from schema.sql via db.bootstrap) ---
+*.db
+*.db-wal
+*.db-shm
+*.sqlite
+*.sqlite3
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+build/
+dist/
+.Python
+
+# --- Virtual environments ---
+.venv/
+venv/
+env/
+ENV/
+
+# --- Test / tooling caches ---
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# --- Local editor / OS / Claude settings ---
+.claude/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# --- Generated audio / scratch ---
+*.wav
+*.mp3
+*.ogg

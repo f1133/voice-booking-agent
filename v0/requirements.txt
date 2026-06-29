@@ -1,0 +1,19 @@
+# Text mode + voice server core have ZERO third-party deps (stdlib sqlite3,
+# urllib, http.server). The local LLM is reached over Ollama's HTTP API.
+
+# Test harness:
+pytest>=7.0
+
+# Voice (speech-to-text) — optional. Without it the voice server still runs and
+# the text box works; the mic button reports that STT isn't installed.
+# On the RTX 5060 (Blackwell) this needs CUDA 12.8+ for GPU; otherwise it
+# auto-falls back to CPU.
+faster-whisper>=1.0
+
+# Natural text-to-speech — optional. Without it the browser uses its best
+# available voice; with it the agent speaks with a natural local neural voice.
+# Uses the ONNX build (no torch) so it installs on Python 3.14.
+# Model files (kokoro-v1.0.onnx, voices-v1.0.bin) go in v0/models/ — see README.
+kokoro-onnx>=0.4
+soundfile>=0.12
+
